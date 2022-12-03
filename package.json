@@ -3,7 +3,6 @@
     "name": "module10challenge",
     "version": "1.0.0",
     "description": "OOP and testing for Module 10 Challenge",
-    "main": "app.js",
     "directories": {
       "lib": "lib",
       "test": "tests"
