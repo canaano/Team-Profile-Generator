@@ -31,7 +31,7 @@ function newEmployee() {
         message: "What is the id of this team member?",
       },
     ])
-    .then(({ position, name, email, id }) => {
+    .then(({ position, name, id, email }) => {
       //   console.log(data);
       switch (position) {
         case "manager":
@@ -44,7 +44,7 @@ function newEmployee() {
               },
             ])
             .then(({ officeNumber }) => {
-              employees.push(new Manager(name, email, id, officeNumber));
+              employees.push(new Manager(name, id, email, officeNumber));
               another();
             });
           break;
@@ -58,7 +58,7 @@ function newEmployee() {
               },
             ])
             .then(({ github }) => {
-              employees.push(new Engineer(name, email, id, github));
+              employees.push(new Engineer(name, id, email, github));
               another();
             });
           break;
