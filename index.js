@@ -116,9 +116,9 @@ function another() {
   <div class= "col-md-4 text-dark bg-light border border-dark rounded-lg" style = "margin : 5px; box-shadow: 5px 5px 5px">
     <h1 class="card-title" style="text-align: center">${employee.getName()}</h1>
     <h2 class=" mb-2 text-dark">${employee.getRole()}</h2>
-    <h3 class=" mb-2 text-dark">Id: ${employee.getId()}</h3>
+    <h3 class=" mb-2 text-dark text-truncate">Id: ${employee.getId()}</h3>
     <h4 class=" mb-2 text-muted text-truncate"><a href="mailto:${employee.getEmail()}" class="card-link">${employee.getEmail()}</a></h3>
-    <h4 class=" mb-2"> ${SpecificToRole(employee)}</h3>
+    <h4 class=" mb-2 text-truncate"> ${SpecificToRole(employee)}</h3>
   </div>
   `
   )} 
