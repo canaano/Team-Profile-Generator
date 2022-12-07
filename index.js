@@ -106,19 +106,19 @@ function another() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   </head>
-  <div class="jumbotron" style="text-align: center; border-bottom: 5px solid black; opacity : .9; background-image : url(./assets/background.png); background-size: cover; background-position: center ; background-repeat: no-repeat ; color:black; text-align:center; " id="jumbotron">
-    <h1 class="display-5" style="font-weight:bolder;">Team Simple Drone</h1>
+  <div class="jumbotron" style="text-align: center; background-image : url(./assets/background.png); background-size: cover; background-position: center ; background-repeat: no-repeat ; color:whitesmoke; text-align:center; " id="jumbotron">
+    <h1 class="display-5" style="font-weight:bolder; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-align: left;">Team Simple Drone</h1>
     </div>
     <div class="container">
     <div class="column">
   ${employees.map(
     (employee) => /*html*/ `
-  <div class= "col-md-3 text-dark bg-light border border-dark rounded-lg" style = "margin : 5px;">
+  <div class= "col-md-3 text-dark bg-light border border-dark rounded-lg" style = "margin : 5px; box-shadow: 5px 5px 5px">
     <h1 class="card-title" style="text-align: center">${employee.getName()}</h1>
-    <h2 class="card-subtitle mb-2 text-dark">${employee.getRole()}</h2>
-    <h3 class="card-subtitle mb-2 text-dark">Id: ${employee.getId()}</h3>
-    <h4 class="card-subtitle mb-2 text-muted"><a href="mailto:${employee.getEmail()}" class="card-link">${employee.getEmail()}</a></h3>
-    <h4 class="card-subtitle mb-2 text-muted"> ${uniqueField(employee)}</h3>
+    <h2 class=" mb-2 text-dark">${employee.getRole()}</h2>
+    <h3 class=" mb-2 text-dark">Id: ${employee.getId()}</h3>
+    <h4 class=" mb-2 text-muted text-truncate"><a href="mailto:${employee.getEmail()}" class="card-link">${employee.getEmail()}</a></h3>
+    <h4 class=" mb-2 text-muted"> ${SpecificToRole(employee)}</h3>
   </div>
   `
   )} 
@@ -128,7 +128,7 @@ function another() {
   }
 }
 
-function uniqueField(employee) {
+function SpecificToRole(employee) {
   switch (employee.getRole()) {
     case "Manager":
       return `Office:${employee.getOfficeNumber()}`;
