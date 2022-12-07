@@ -106,15 +106,15 @@ function another() {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   </head>
-  <div class="jumbotron" style="text-align: center; border-bottom: 5px solid black; opacity : .9; background : linear-gradient(to top, rgb(96, 179, 220), rgb(239, 243, 245)); color:black; text-align:center; " id="jumbotron">
-    <h1 class="display-4" style="font-weight:bolder;">Team Roster</h1>
+  <div class="jumbotron" style="text-align: center; border-bottom: 5px solid black; opacity : .9; background-image : url(./assets/background.png); background-size: cover; background-position: center ; background-repeat: no-repeat ; color:black; text-align:center; " id="jumbotron">
+    <h1 class="display-5" style="font-weight:bolder;">Team Simple Drone</h1>
     </div>
     <div class="container">
-    <div class="row">
+    <div class="column">
   ${employees.map(
     (employee) => /*html*/ `
   <div class= "col-md-3 text-dark bg-light border border-dark rounded-lg" style = "margin : 5px;">
-    <h1 class="card-title">${employee.getName()}</h1>
+    <h1 class="card-title" style="text-align: center">${employee.getName()}</h1>
     <h2 class="card-subtitle mb-2 text-dark">${employee.getRole()}</h2>
     <h3 class="card-subtitle mb-2 text-dark">Id: ${employee.getId()}</h3>
     <h4 class="card-subtitle mb-2 text-muted"><a href="mailto:${employee.getEmail()}" class="card-link">${employee.getEmail()}</a></h3>
@@ -123,7 +123,6 @@ function another() {
   `
   )} 
     </div>
-          
           `
     );
   }
@@ -134,13 +133,10 @@ function uniqueField(employee) {
     case "Manager":
       return `Office:${employee.getOfficeNumber()}`;
 
-    // ask for office number
     case "Engineer":
-      //ask for git hub
       return `<a href="https://github.com/${employee.getGithub()}" class="card-link">Github</a>`;
 
     case "Intern":
-      // ask about school
       return ` Student at: ${employee.getSchool()}`;
   }
 }
