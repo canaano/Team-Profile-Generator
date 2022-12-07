@@ -72,7 +72,7 @@ function newEmployee() {
               },
             ])
             .then(({ school }) => {
-              employees.push(new Intern(name, email, id, school));
+              employees.push(new Intern(name, id, email, school));
               another();
             });
           break;
